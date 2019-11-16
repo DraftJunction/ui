@@ -27,11 +27,13 @@ const SubTitle = styled("h3")`
 
   opacity: 0.85;
 `;
-
-const VerticalAlignMiddle = styled("span")`
-  vertical-align: middle;
-  display: inline-block;
+const CameraIcon = styled(Box)`
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
 `;
+
 const WrapperStyled = styled(Box)`
   position: relative;
   height: 100%;
@@ -60,10 +62,11 @@ const ContinueButton = styled("button")`
   font-size: 16px;
   line-height: 16px;
   width: 100%;
-  max-width: 200px;
+  padding: 18px 30px;
+  position: relative;
+  text-align: center;
+  width: 100%;
   cursor: pointer;
-  /* identical to box height, or 100% */
-
   text-align: center;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -119,10 +122,11 @@ export default () => {
                   {({ onClick }) => {
                     return (
                       <ContinueButton onClick={onClick}>
-                        <VerticalAlignMiddle>
+                        <CameraIcon>
                           <Camera width={32} height={32} fill="white" />
-                        </VerticalAlignMiddle>
-                        <VerticalAlignMiddle>CONTINUE</VerticalAlignMiddle>
+                        </CameraIcon>
+                        CONTINUE
+                        <span />
                       </ContinueButton>
                     );
                   }}
