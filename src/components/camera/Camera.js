@@ -46,7 +46,7 @@ const Camera = ({ loadReceipts, loading }) => {
   }, [setCaptured, videoCaptureRef]);
   const proccessCapturing = useCallback(() => {
     navigator.mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({ video: { facingMode: { exact: 'environment' } } })
       .then(mediaStream => {
         videoRef.current.srcObject = mediaStream;
         const track = mediaStream.getVideoTracks()[0];
@@ -103,7 +103,7 @@ const Camera = ({ loadReceipts, loading }) => {
           ref={videoRef}
         />
       )}
-      {captured && <CanvasStyled ref={canvasRef} />}
+      {captured && <CanvasStyled ref={canvasRef}/>}
       <CameraPanel
         disabled={loading}
         captured={captured}
