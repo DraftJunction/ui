@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchReceipts = request => {
   return axios
-    .post("http://167.172.44.51:8080/photo", request)
+    .post("https://167.172.44.51/api/photo", request)
     .then(response => {
       return response.data.results;
     })
