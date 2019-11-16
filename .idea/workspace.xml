@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02826173-160d-4f9d-b639-464bf6cd05d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/gh-pages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/receipts/epics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receipts/epics.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573838083550</updated>
       <workItem from="1573838084856" duration="34541000" />
-      <workItem from="1573930098288" duration="1022000" />
+      <workItem from="1573930098288" duration="2339000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1573906771565</created>
@@ -130,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573930328610</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gh">
+      <created>1573933108619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573933108620</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +158,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="gh" />
+    <option name="LAST_COMMIT_MESSAGE" value="gh" />
   </component>
 </project>

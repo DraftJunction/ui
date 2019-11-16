@@ -1,6 +1,6 @@
 import { LOAD_RECEIPTS, LOADED_RECEIPTS } from "./types";
-import { catchError, map, mapTo, switchMap } from "rxjs/operators";
-import { of } from "rxjs";
+import { catchError, map, mapTo, mergeMap } from "rxjs/operators";
+import { from, of } from "rxjs";
 
 import { ofType } from "redux-observable";
 import { fetchReceipts } from "../../services/receipts";
@@ -17,9 +17,11 @@ export const loadingReceiptsEpic = actions => {
 export const loadReceiptsEpic = actions => {
   return actions.pipe(
     ofType(LOAD_RECEIPTS),
-    switchMap(({ request }) => fetchReceipts(request)),
+    mergeMap(({ request }) =>
+      from(fetchReceipts(request)).pipe(
+        catchError(() => of([]))
+      )),
     map(data => loadedReceipts(data)),
-    catchError(() => of(loadedReceipts([])))
   );
 };
 
