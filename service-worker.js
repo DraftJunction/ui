@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://draftjunction.github.io/ui/precache-manifest.5c61e7b7f490d330451faa8daf2e9eae.js"
+  "https://draftjunction.github.io/ui/precache-manifest.d481525b3068c483e50091f8c19b3212.js"
 );
 
 self.addEventListener('message', (event) => {

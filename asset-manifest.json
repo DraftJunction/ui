@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://draftjunction.github.io/ui/static/css/main.df600ad4.chunk.css",
-    "main.js": "https://draftjunction.github.io/ui/static/js/main.0aea5526.chunk.js",
-    "main.js.map": "https://draftjunction.github.io/ui/static/js/main.0aea5526.chunk.js.map",
+    "main.js": "https://draftjunction.github.io/ui/static/js/main.f0d79371.chunk.js",
+    "main.js.map": "https://draftjunction.github.io/ui/static/js/main.f0d79371.chunk.js.map",
     "runtime-main.js": "https://draftjunction.github.io/ui/static/js/runtime-main.ccbe4845.js",
     "runtime-main.js.map": "https://draftjunction.github.io/ui/static/js/runtime-main.ccbe4845.js.map",
     "static/js/2.5efb740f.chunk.js": "https://draftjunction.github.io/ui/static/js/2.5efb740f.chunk.js",
     "static/js/2.5efb740f.chunk.js.map": "https://draftjunction.github.io/ui/static/js/2.5efb740f.chunk.js.map",
     "index.html": "https://draftjunction.github.io/ui/index.html",
-    "precache-manifest.5c61e7b7f490d330451faa8daf2e9eae.js": "https://draftjunction.github.io/ui/precache-manifest.5c61e7b7f490d330451faa8daf2e9eae.js",
+    "precache-manifest.d481525b3068c483e50091f8c19b3212.js": "https://draftjunction.github.io/ui/precache-manifest.d481525b3068c483e50091f8c19b3212.js",
     "service-worker.js": "https://draftjunction.github.io/ui/service-worker.js",
     "static/css/main.df600ad4.chunk.css.map": "https://draftjunction.github.io/ui/static/css/main.df600ad4.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.ccbe4845.js",
     "static/js/2.5efb740f.chunk.js",
     "static/css/main.df600ad4.chunk.css",
-    "static/js/main.0aea5526.chunk.js"
+    "static/js/main.f0d79371.chunk.js"
   ]
 }

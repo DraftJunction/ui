@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3866a5c47440cc653621e98c30c4bb3a",
+    "revision": "84904ba92db564f55e657f41ac990f9b",
     "url": "https://draftjunction.github.io/ui/index.html"
   },
   {
-    "revision": "e80f29e6b4ea02315d4a",
+    "revision": "95e5bbdbb7a67711538c",
     "url": "https://draftjunction.github.io/ui/static/css/main.df600ad4.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://draftjunction.github.io/ui/static/js/2.5efb740f.chunk.js"
   },
   {
-    "revision": "e80f29e6b4ea02315d4a",
-    "url": "https://draftjunction.github.io/ui/static/js/main.0aea5526.chunk.js"
+    "revision": "95e5bbdbb7a67711538c",
+    "url": "https://draftjunction.github.io/ui/static/js/main.f0d79371.chunk.js"
   },
   {
     "revision": "8e06880cbde4182e9d8e",
