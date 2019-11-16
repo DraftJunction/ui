@@ -70,27 +70,27 @@ const getImage = receipt =>
 export default ({ onSelect, receipt }) => {
   const image = getImage(receipt);
   return (
-    <Box cursor="pointer" onClick={onSelect}>
+    <Box cursor="pointer" onClick={onSelect} mb="35px">
       <ImageWrapper mb="10px">
         <ImageStubWrapper>
-          <NoImage />
+          <NoImage/>
         </ImageStubWrapper>
-        {image && <Image src={image} />}
+        {image && <Image src={image}/>}
       </ImageWrapper>
 
       <Box display="flex" mb="10px" alignItems="center">
         <Box display="flex" alignItems="center" mr="20px">
           <BottomIcon>
-            <Clock />
+            <Clock/>
           </BottomIcon>
           <BottomText>{receipt.PreparationTime.Description}</BottomText>
         </Box>
 
         <Box display="flex" mr="20px" alignItems="center">
-          <BottomIcon>
-            <Rating />
+          {receipt.EnergyAmounts.KcalPerPortion && <BottomIcon>
+            <Rating/>
           </BottomIcon>
-          {receipt.EnergyAmounts.KcalPerPortion && (
+          && (
             <BottomText>{receipt.EnergyAmounts.KcalPerPortion} cals</BottomText>
           )}
         </Box>
