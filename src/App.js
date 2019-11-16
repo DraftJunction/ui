@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ReceiptsPage from "./pages/ReceiptsPage";
 import CameraPage from "./pages/CameraPage";
@@ -56,7 +56,7 @@ export const App = () => (
           <Route exact path={"/"} component={HomePage} />
           <Route exact path={"/camera"} component={CameraPage} />
           <Route exact path={"/receipts"} component={ReceiptsPage} />
-          // TODO made default route
+          <Route path={"*"} render={() => <Redirect to={"/"} />} />
         </Switch>
       </ConnectedRouter>
     </Provider>

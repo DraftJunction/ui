@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
 import Box from "../components/Box";
 import Link from "../components/Link";
 import styled from "styled-components";
@@ -121,9 +120,7 @@ export default () => {
                     return (
                       <ContinueButton onClick={onClick}>
                         <VerticalAlignMiddle>
-                          <IconButton>
-                            <Camera width={32} height={32} fill="white" />
-                          </IconButton>
+                          <Camera width={32} height={32} fill="white" />
                         </VerticalAlignMiddle>
                         <VerticalAlignMiddle>CONTINUE</VerticalAlignMiddle>
                       </ContinueButton>

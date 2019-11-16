@@ -21,19 +21,19 @@ pointer-events:  ${props => (props.disabled ? "none" : "all")}
  cursor:  ${props => (props.disabled ? "text" : "pointer")}
 `;
 
-export default ({ captured, onRevert, onAccept, onCapture }) => (
+export default ({ captured, disabled, onRevert, onAccept, onCapture }) => (
   <CameraPanelStyled>
-    <ControlIcon disabled={!captured}>
+    <ControlIcon disabled={!captured || disabled}>
       <IconButton onClick={onRevert}>
         <Revert height={32} width={32} fill="white" />
       </IconButton>
     </ControlIcon>
-    <ControlIcon disabled={captured}>
+    <ControlIcon disabled={captured || disabled}>
       <IconButton onClick={onCapture}>
         <Camera height={32} width={32} fill="white" />
       </IconButton>
     </ControlIcon>
-    <ControlIcon disabled={!captured}>
+    <ControlIcon disabled={!captured || disabled}>
       <IconButton onClick={onAccept}>
         <Check height={32} width={32} fill="white" />
       </IconButton>

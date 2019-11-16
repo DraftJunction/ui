@@ -18,10 +18,9 @@ export const loadReceiptsEpic = actions => {
   return actions.pipe(
     ofType(LOAD_RECEIPTS),
     mergeMap(({ request }) =>
-      from(fetchReceipts(request)).pipe(
-        catchError(() => of([]))
-      )),
-    map(data => loadedReceipts(data)),
+      from(fetchReceipts(request)).pipe(catchError(() => of([])))
+    ),
+    map(data => loadedReceipts(data))
   );
 };
 

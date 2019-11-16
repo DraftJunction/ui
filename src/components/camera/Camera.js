@@ -15,7 +15,7 @@ const CanvasStyled = styled("canvas")`
   width: 100%;
   height: 100%;
 `;
-const Camera = ({ loadReceipts }) => {
+const Camera = ({ loadReceipts, loading }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const blobRef = useRef(null);
@@ -105,6 +105,7 @@ const Camera = ({ loadReceipts }) => {
       )}
       {captured && <CanvasStyled ref={canvasRef} />}
       <CameraPanel
+        disabled={loading}
         captured={captured}
         onAccept={onAcceptCallback}
         onRevert={onRevertCallback}
@@ -113,7 +114,7 @@ const Camera = ({ loadReceipts }) => {
     </CameraWrapperStyled>
   );
 };
-
-export default connect(null, {
+const mapStateToProps = ({ receipts }) => ({ loading: receipts.loading });
+export default connect(mapStateToProps, {
   loadReceipts
 })(Camera);
