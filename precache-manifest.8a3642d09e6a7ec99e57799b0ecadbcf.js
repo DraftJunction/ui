@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84904ba92db564f55e657f41ac990f9b",
+    "revision": "3cb0bc0f60adf20d6c63aa1a0d3dc059",
     "url": "https://draftjunction.github.io/ui/index.html"
   },
   {
-    "revision": "95e5bbdbb7a67711538c",
+    "revision": "71bba3296024123b3a07",
     "url": "https://draftjunction.github.io/ui/static/css/main.df600ad4.chunk.css"
   },
   {
-    "revision": "44b42d1d213286593639",
-    "url": "https://draftjunction.github.io/ui/static/js/2.5efb740f.chunk.js"
+    "revision": "5a92e3dcb97ce13cbc10",
+    "url": "https://draftjunction.github.io/ui/static/js/2.a48d471a.chunk.js"
   },
   {
-    "revision": "95e5bbdbb7a67711538c",
-    "url": "https://draftjunction.github.io/ui/static/js/main.f0d79371.chunk.js"
+    "revision": "71bba3296024123b3a07",
+    "url": "https://draftjunction.github.io/ui/static/js/main.2e9d6093.chunk.js"
   },
   {
     "revision": "8e06880cbde4182e9d8e",
