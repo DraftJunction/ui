@@ -19,8 +19,9 @@
     "styled-system": "^5.1.2"
   },
   "scripts": {
+    "deploy": "node scripts/gh-pages.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://logovazzik.github.io/draft/ && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "formatter:fix": "prettier --write \"src/**/*.js\""
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.17.0",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.19.1",
     "react-router-dom": "^5.1.2"
   }
