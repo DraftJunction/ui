@@ -21,7 +21,7 @@
   "scripts": {
     "deploy": "node scripts/gh-pages.js",
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=https://logovazzik.github.io/draft/ && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "formatter:fix": "prettier --write \"src/**/*.js\""

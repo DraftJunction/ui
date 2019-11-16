@@ -64,27 +64,30 @@ const ImageStubWrapper = styled(Box)`
 const BottomIcon = styled(Box)`
   margin-right: 6px;
 `;
+
+const getImage = (receipt) => receipt.PictureUrls.length && receipt.PictureUrls[0].Normal;
 export default ({ onSelect, receipt }) => {
+  const image = getImage(receipt);
   return (
     <Box>
       <ImageWrapper mb="10px">
         <ImageStubWrapper>
-          <NoImage />
+          <NoImage/>
         </ImageStubWrapper>
-        <Image src={receipt.PictureUrls[0].Normal} />
+        {image && <Image src={image}/>}
       </ImageWrapper>
 
       <Box display="flex" mb="10px" alignItems="center">
         <Box display="flex" alignItems="center" mr="20px">
           <BottomIcon>
-            <Clock />
+            <Clock/>
           </BottomIcon>
           <BottomText>{receipt.PreparationTime.Description}</BottomText>
         </Box>
 
         <Box display="flex" mr="20px" alignItems="center">
           <BottomIcon>
-            <Rating />
+            <Rating/>
           </BottomIcon>
           <BottomText>{receipt.EnergyAmounts.KcalPerPortion} cals</BottomText>
         </Box>
@@ -92,4 +95,5 @@ export default ({ onSelect, receipt }) => {
       <Title>{receipt.Name}</Title>
     </Box>
   );
-};
+}
+
