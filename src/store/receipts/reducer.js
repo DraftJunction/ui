@@ -1,8 +1,8 @@
 import { LOAD_RECEIPTS, LOADED_RECEIPTS } from "./types";
 
 const initialState = {
-  loaded: null,
-  isLoading: false
+  data: null,
+  loading: false
 };
 
 export default (state = initialState, action) => {
@@ -10,13 +10,13 @@ export default (state = initialState, action) => {
     case LOADED_RECEIPTS:
       return {
         ...state,
-        isLoading: false,
-        loaded: action.value
+        loading: false,
+        data: action.receipts
       };
     case LOAD_RECEIPTS: {
       return {
         ...state,
-        isLoading: true
+        loading: true
       };
     }
 

@@ -98,6 +98,7 @@ const Camera = ({ loadReceipts }) => {
           muted
           playsInline={true}
           width="100%"
+          height="100%"
           autoPlay
           ref={videoRef}
         />
@@ -113,11 +114,6 @@ const Camera = ({ loadReceipts }) => {
   );
 };
 
-const mapStateToProps = state => {
-  debugger;
-  return {};
-};
-
-export default connect(mapStateToProps, {
+export default connect(null, {
   loadReceipts
 })(Camera);

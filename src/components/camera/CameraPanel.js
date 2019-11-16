@@ -7,9 +7,6 @@ import Check from "../icons/Check";
 import Box from "../Box";
 
 const CameraPanelStyled = styled("div")`
-  position: absolute;
-  left: 0;
-  bottom: 0;
   padding: 10px 20px;
   width: 100%;
   display: flex;

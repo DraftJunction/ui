@@ -1,14 +1,14 @@
 import axios from "axios";
 
 export const fetchReceipts = request => {
-  debugger;
   return axios
     .post("http://167.172.44.51:1323/photo", request)
-    .then(a => {
-      debugger;
+    .then(response => {
+      return response.data.results;
     })
     .catch(e => {
-      debugger;
+      console.log(e);
+      throw e;
     });
 };
 

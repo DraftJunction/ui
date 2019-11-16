@@ -2,36 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02826173-160d-4f9d-b639-464bf6cd05d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Box.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Link.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/camera/Camera.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/camera/CameraPanel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/Back.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/Camera.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/Check.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/icons/Revert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CameraPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Receipts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/receipts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/receipts/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/receipts/epics.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/receipts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/receipts/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/receipts/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Receipt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/Circle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/Clock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/NoImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/Rating.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/icons/SadSmile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ReceiptPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ReceiptsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/receipts.mock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/camera/Camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/camera/Camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/camera/CameraPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/camera/CameraPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Back.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Back.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Check.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/Revert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/icons/Revert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CameraPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CameraPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Receipts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/receipts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/receipts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/receipts/epics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receipts/epics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/receipts/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/receipts/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +50,12 @@
   <component name="ProjectId" id="1Tf50AJdNzbUcoGIuisihdofcR7" />
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="GO_FMT" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -116,8 +111,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573838083550</updated>
-      <workItem from="1573838084856" duration="20159000" />
+      <workItem from="1573838084856" duration="34541000" />
     </task>
+    <task id="LOCAL-00001" summary="initial">
+      <created>1573906771565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573906771565</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +136,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
 </project>
