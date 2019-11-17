@@ -71,6 +71,7 @@ const BottomIcon = styled(Box)`
 
 const getImage = receipt =>
   receipt.PictureUrls.length && receipt.PictureUrls[0].Normal;
+
 const getHealth = receipt =>
   receipt.HealthRating > 0.15
     ? "red"
@@ -87,6 +88,7 @@ export default ({ onSelect, receipt, ...props }) => {
 
   return receipt ? (
     <Box cursor="pointer" onClick={() => onSelect(receipt)} {...props}>
+
       <ImageWrapper mb="10px">
         <ImageStubWrapper>
           <NoImage />
@@ -108,6 +110,7 @@ export default ({ onSelect, receipt, ...props }) => {
             <BottomText>{receipt.PreparationTime.Description}</BottomText>
           </Box>
 
+
           <Box display="flex" mr="20px" alignItems="center">
             {receipt.EnergyAmounts.KcalPerPortion && (
               <React.Fragment>
@@ -124,6 +127,7 @@ export default ({ onSelect, receipt, ...props }) => {
         <Box display="flex" alignItems="center">
           {existHome(receipt) && <RefrigeratorStyled />}
           <Box width="18px" height="18px" borderRadius="50%" bg={health}></Box>
+
         </Box>
       </Box>
       <Title>{receipt.Name}</Title>
