@@ -95,7 +95,7 @@ export const ReceiptPage = () => {
                   justifyContent="space-between"
                 >
                   <Box display="flex" alignItems="center" minHeight="30px">
-                    {!ingredient.RecentlyBought && <RefrigeratorStyled />}
+                    {ingredient.RecentlyBought && <RefrigeratorStyled />}
                     <Ingredient display="flex" alignItems="center">
                       {ingredient.Name}
                     </Ingredient>

@@ -77,10 +77,10 @@ const getHealth = receipt =>
     : receipt.HealthRating > 0.1
     ? "yellow"
     : "#7EB941";
-export const existHome = (receipt) => {
-   const ingr = getIngredients(receipt);
-   return ingr.some(x => x.RecentlyBought);
-}
+export const existHome = receipt => {
+  const ingr = getIngredients(receipt);
+  return ingr.some(x => x.RecentlyBought);
+};
 export default ({ onSelect, receipt, ...props }) => {
   const image = receipt && getImage(receipt);
   const health = receipt && getHealth(receipt);
@@ -89,9 +89,9 @@ export default ({ onSelect, receipt, ...props }) => {
     <Box cursor="pointer" onClick={() => onSelect(receipt)} {...props}>
       <ImageWrapper mb="10px">
         <ImageStubWrapper>
-          <NoImage/>
+          <NoImage />
         </ImageStubWrapper>
-        {image && <Image src={image}/>}
+        {image && <Image src={image} />}
       </ImageWrapper>
 
       <Box
@@ -103,7 +103,7 @@ export default ({ onSelect, receipt, ...props }) => {
         <Box display="flex" alignItems="center">
           <Box display="flex" alignItems="center" mr="20px">
             <BottomIcon>
-              <Clock/>
+              <Clock />
             </BottomIcon>
             <BottomText>{receipt.PreparationTime.Description}</BottomText>
           </Box>
@@ -112,7 +112,7 @@ export default ({ onSelect, receipt, ...props }) => {
             {receipt.EnergyAmounts.KcalPerPortion && (
               <React.Fragment>
                 <BottomIcon>
-                  <Rating/>
+                  <Rating />
                 </BottomIcon>
                 <BottomText>
                   {receipt.EnergyAmounts.KcalPerPortion} cals
@@ -121,15 +121,9 @@ export default ({ onSelect, receipt, ...props }) => {
             )}
           </Box>
         </Box>
-        <Box display="flex"
-        alignItems="center">
-          {existHome(receipt) && <RefrigeratorStyled/>}
-          <Box
-            width="18px"
-            height="18px"
-            borderRadius="50%"
-            bg={health}
-          ></Box>
+        <Box display="flex" alignItems="center">
+          {existHome(receipt) && <RefrigeratorStyled />}
+          <Box width="18px" height="18px" borderRadius="50%" bg={health}></Box>
         </Box>
       </Box>
       <Title>{receipt.Name}</Title>
