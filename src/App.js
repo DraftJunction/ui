@@ -1,18 +1,19 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ReceiptsPage from "./pages/ReceiptsPage";
 import CameraPage from "./pages/CameraPage";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import styled from "styled-components";
 import { Provider } from "react-redux";
+import { ReceiptPage } from "./pages/ReceiptPage";
 import { combineEpics, createEpicMiddleware } from "redux-observable";
 // import './services/receipts.mock';
 import {
+  loadedReceiptsEpic,
   loadingReceiptsEpic,
-  loadReceiptsEpic,
-  loadedReceiptsEpic
+  loadReceiptsEpic
 } from "./store/receipts/epics";
 import receipts from "./store/receipts/reducer";
 import { GlobalStyle } from "./components/Global";
@@ -56,6 +57,7 @@ export const App = () => (
           <Route exact path={"/"} component={HomePage} />
           <Route exact path={"/camera"} component={CameraPage} />
           <Route exact path={"/receipts"} component={ReceiptsPage} />
+          <Route exact path={"/receipt/:id"} component={ReceiptPage} />
           <Route path={"*"} render={() => <Redirect to={"/"} />} />
         </Switch>
       </ConnectedRouter>

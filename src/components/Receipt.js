@@ -4,7 +4,11 @@ import styled from "styled-components";
 import Clock from "../components/icons/Clock";
 import Rating from "../components/icons/Rating";
 import NoImage from "../components/icons/NoImage";
-
+import { getIngredients } from "../pages/ReceiptPage";
+import Refrigerator from "../components/icons/Refrigerator";
+const RefrigeratorStyled = styled(Refrigerator)`
+  margin-right: 6px;
+`;
 const Title = styled("h2")`
   font-family: Roboto;
   font-style: normal;
@@ -67,39 +71,66 @@ const BottomIcon = styled(Box)`
 
 const getImage = receipt =>
   receipt.PictureUrls.length && receipt.PictureUrls[0].Normal;
-export default ({ onSelect, receipt }) => {
-  const health =  receipt.HealthRating > 0.15 ? 'red' : receipt.HealthRating > 0.1 ? 'yellow' : '#7EB941';
-  const image = getImage(receipt);
-  return (
-    <Box cursor="pointer" onClick={onSelect} mb="35px">
+
+const getHealth = receipt =>
+  receipt.HealthRating > 0.15
+    ? "red"
+    : receipt.HealthRating > 0.1
+    ? "yellow"
+    : "#7EB941";
+export const existHome = receipt => {
+  const ingr = getIngredients(receipt);
+  return ingr.some(x => x.RecentlyBought);
+};
+export default ({ onSelect, receipt, ...props }) => {
+  const image = receipt && getImage(receipt);
+  const health = receipt && getHealth(receipt);
+
+  return receipt ? (
+    <Box cursor="pointer" onClick={() => onSelect(receipt)} {...props}>
+
       <ImageWrapper mb="10px">
         <ImageStubWrapper>
-          <NoImage/>
+          <NoImage />
         </ImageStubWrapper>
-        {image && <Image src={image}/>}
+        {image && <Image src={image} />}
       </ImageWrapper>
 
-      <Box display="flex" mb="10px" alignItems="center">
-        <Box display="flex" alignItems="center" mr="20px">
-          <BottomIcon>
-            <Clock/>
-          </BottomIcon>
-          <BottomText>{receipt.PreparationTime.Description}</BottomText>
-        </Box>
+      <Box
+        display="flex"
+        mb="10px"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Box display="flex" alignItems="center">
+          <Box display="flex" alignItems="center" mr="20px">
+            <BottomIcon>
+              <Clock />
+            </BottomIcon>
+            <BottomText>{receipt.PreparationTime.Description}</BottomText>
+          </Box>
 
-        <Box display="flex" mr="20px" alignItems="center">
-          {receipt.EnergyAmounts.KcalPerPortion && <BottomIcon>
-            <Rating/>
-          </BottomIcon>
-          && (
-            <BottomText>{receipt.EnergyAmounts.KcalPerPortion} cals</BottomText>
-          )}
 
+          <Box display="flex" mr="20px" alignItems="center">
+            {receipt.EnergyAmounts.KcalPerPortion && (
+              <React.Fragment>
+                <BottomIcon>
+                  <Rating />
+                </BottomIcon>
+                <BottomText>
+                  {receipt.EnergyAmounts.KcalPerPortion} cals
+                </BottomText>
+              </React.Fragment>
+            )}
+          </Box>
         </Box>
-        <Box display="flex" width="18px" height="18px" borderRadius='10px' bg={health}>
+        <Box display="flex" alignItems="center">
+          {existHome(receipt) && <RefrigeratorStyled />}
+          <Box width="18px" height="18px" borderRadius="50%" bg={health}></Box>
+
         </Box>
       </Box>
       <Title>{receipt.Name}</Title>
     </Box>
-  );
+  ) : null;
 };

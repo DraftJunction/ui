@@ -107,14 +107,12 @@ export default () => {
         <Box display="flex" height="100%" flexDirection="column">
           <Box mt="100px">
             <Title>Draft</Title>
-            <SubTitle>
-              Draft is the solution to your grocery frustration.
-            </SubTitle>
+            <SubTitle>the solution to your grocery frustration</SubTitle>
           </Box>
           <BottomPanelStyled>
             <BottomText>
-              Come to the store and take a photo of a product you like, we will
-              do the rest. We know what you like and what's good for you.
+              Come to the store and take a photo of the products you like, Draft
+              will do the planning.
             </BottomText>
             <Box textAlign="center">
               {cameraSupported && (
