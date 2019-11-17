@@ -5,8 +5,8 @@ import Link from "../components/Link";
 import Receipt from "../components/Receipt";
 import NavBar from "../components/NavBar";
 import { connect } from "react-redux";
-import { navigateToRoute } from '../services/routes';
-import { useHistory, useLocation } from 'react-router';
+import { navigateToRoute } from "../services/routes";
+import { useHistory, useLocation } from "react-router";
 import Error, { SubTitle } from "../components/Error";
 
 const ReceiptsLayout = styled(Box)`
@@ -14,7 +14,6 @@ const ReceiptsLayout = styled(Box)`
   margin: 10px auto;
   width: 100%;
 `;
-
 
 const A = styled("a")`
   text-decoration: underline;
@@ -25,9 +24,9 @@ export const ReceiptsPage = ({ receipts = [] }) => {
   const history = useHistory();
   const location = useLocation();
 
-  const onSelectReceiptCallback = useCallback((receipt) => {
+  const onSelectReceiptCallback = useCallback(receipt => {
     navigateToRoute({
-      to: '/receipt/' + receipt.Id,
+      to: "/receipt/" + receipt.Id,
       location,
       history
     });
@@ -41,12 +40,13 @@ export const ReceiptsPage = ({ receipts = [] }) => {
       height="0"
       minHeight="100%"
     >
-      <NavBar title={"Recipes for you"} route={"/camera"}/>
+      <NavBar title={"Recipes for you"} route={"/camera"} />
       <Box height="100%" overflow="auto">
         {receipts.length === 0 ? (
-          <Error title={'We are so sorry'}>
+          <Error title={"We are so sorry"}>
             <SubTitle>
-              but we didn't find any receipts for you, please give us a chance and{" "}
+              but we didn't find any receipts for you, please give us a chance
+              and{" "}
               <Link to={"/camera"}>
                 {({ onClick }) => {
                   return (
@@ -66,7 +66,14 @@ export const ReceiptsPage = ({ receipts = [] }) => {
         ) : (
           <ReceiptsLayout>
             {receipts.map((receipt, i) => {
-              return <Receipt onSelect={onSelectReceiptCallback} receipt={receipt} key={i}/>;
+              return (
+                <Receipt
+                  mb="35px"
+                  onSelect={onSelectReceiptCallback}
+                  receipt={receipt}
+                  key={i}
+                />
+              );
             })}
           </ReceiptsLayout>
         )}

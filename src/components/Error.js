@@ -3,7 +3,6 @@ import Box from "./Box";
 import SadSmile from "./icons/SadSmile";
 import styled from "styled-components";
 
-
 const Title = styled("h1")`
   font-family: Roboto;
   font-style: normal;
@@ -14,7 +13,6 @@ const Title = styled("h1")`
   margin-bottom: 20px;
   color: black;
 `;
-
 
 export const SubTitle = styled("h3")`
   font-family: Roboto;
@@ -28,7 +26,6 @@ export const SubTitle = styled("h3")`
 
   opacity: 0.85;
 `;
-
 
 export default ({ title, description, children }) => {
   return (
@@ -46,7 +43,7 @@ export default ({ title, description, children }) => {
           {children}
         </Box>
         <Box textAlign="center">
-          <SadSmile/>
+          <SadSmile />
         </Box>
       </Box>
     </React.Fragment>
