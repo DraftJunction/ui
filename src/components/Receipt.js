@@ -68,6 +68,7 @@ const BottomIcon = styled(Box)`
 const getImage = receipt =>
   receipt.PictureUrls.length && receipt.PictureUrls[0].Normal;
 export default ({ onSelect, receipt }) => {
+  const health =  receipt.HealthRating > 0.15 ? 'red' : receipt.HealthRating > 0.1 ? 'yellow' : '#7EB941';
   const image = getImage(receipt);
   return (
     <Box cursor="pointer" onClick={onSelect} mb="35px">
@@ -93,6 +94,9 @@ export default ({ onSelect, receipt }) => {
           && (
             <BottomText>{receipt.EnergyAmounts.KcalPerPortion} cals</BottomText>
           )}
+
+        </Box>
+        <Box display="flex" width="18px" height="18px" borderRadius='10px' bg={health}>
         </Box>
       </Box>
       <Title>{receipt.Name}</Title>
