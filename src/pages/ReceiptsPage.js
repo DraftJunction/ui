@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Box from "../components/Box";
 import styled from "styled-components";
-import SadSmile from "../components/icons/SadSmile";
 import Link from "../components/Link";
 import Receipt from "../components/Receipt";
 import NavBar from "../components/NavBar";
 import { connect } from "react-redux";
+import { navigateToRoute } from '../services/routes';
+import { useHistory, useLocation } from 'react-router';
+import Error, { SubTitle } from "../components/Error";
 
 const ReceiptsLayout = styled(Box)`
   max-width: 340px;
@@ -13,72 +15,24 @@ const ReceiptsLayout = styled(Box)`
   width: 100%;
 `;
 
-const Title = styled("h1")`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 50px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: black;
-`;
-
-const SubTitle = styled("h3")`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
-  text-align: center;
-  letter-spacing: 0.5px;
-  color: black;
-
-  opacity: 0.85;
-`;
 
 const A = styled("a")`
   text-decoration: underline;
   cursor: pointer;
 `;
-const NoReceipts = () => {
-  return (
-    <React.Fragment>
-      <Box
-        margin="0 10px"
-        display="flex"
-        height="100%"
-        justifyContent="center"
-        flexDirection="column"
-      >
-        <Box mb="25px">
-          <Title>We are so sorry,</Title>
-          <SubTitle>
-            but we didn't find any receipts for you, please give us a chance and{" "}
-            <Link to={"/camera"}>
-              {({ onClick }) => {
-                return (
-                  <A
-                    onClick={e => {
-                      e.preventDefault();
-                      onClick(e);
-                    }}
-                  >
-                    try again
-                  </A>
-                );
-              }}
-            </Link>
-          </SubTitle>
-        </Box>
-        <Box textAlign="center">
-          <SadSmile />
-        </Box>
-      </Box>
-    </React.Fragment>
-  );
-};
+
 export const ReceiptsPage = ({ receipts = [] }) => {
+  const history = useHistory();
+  const location = useLocation();
+
+  const onSelectReceiptCallback = useCallback((receipt) => {
+    navigateToRoute({
+      to: '/receipt/' + receipt.Id,
+      location,
+      history
+    });
+  }, []);
+
   return (
     <Box
       display="flex"
@@ -87,14 +41,32 @@ export const ReceiptsPage = ({ receipts = [] }) => {
       height="0"
       minHeight="100%"
     >
-      <NavBar title={"Recipes for you"} route={"/camera"} />
+      <NavBar title={"Recipes for you"} route={"/camera"}/>
       <Box height="100%" overflow="auto">
         {receipts.length === 0 ? (
-          <NoReceipts />
+          <Error title={'We are so sorry'}>
+            <SubTitle>
+              but we didn't find any receipts for you, please give us a chance and{" "}
+              <Link to={"/camera"}>
+                {({ onClick }) => {
+                  return (
+                    <A
+                      onClick={e => {
+                        e.preventDefault();
+                        onClick(e);
+                      }}
+                    >
+                      try again
+                    </A>
+                  );
+                }}
+              </Link>
+            </SubTitle>
+          </Error>
         ) : (
           <ReceiptsLayout>
             {receipts.map((receipt, i) => {
-              return <Receipt receipt={receipt} key={i} />;
+              return <Receipt onSelect={onSelectReceiptCallback} receipt={receipt} key={i}/>;
             })}
           </ReceiptsLayout>
         )}

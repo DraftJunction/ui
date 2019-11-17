@@ -64,38 +64,49 @@ const ImageStubWrapper = styled(Box)`
 const BottomIcon = styled(Box)`
   margin-right: 6px;
 `;
-
+const getIngredients = (receipt) => {
+  return (receipt.Ingredients || []).flatMap((x) => (x.SubSectionIngredients || []).flatMap(x => x))
+}
 const getImage = receipt =>
   receipt.PictureUrls.length && receipt.PictureUrls[0].Normal;
 export default ({ onSelect, receipt }) => {
-  const image = getImage(receipt);
-  return (
-    <Box cursor="pointer" onClick={onSelect} mb="35px">
-      <ImageWrapper mb="10px">
-        <ImageStubWrapper>
-          <NoImage/>
-        </ImageStubWrapper>
-        {image && <Image src={image}/>}
-      </ImageWrapper>
+  debugger
+  const image = receipt && getImage(receipt);
+  const ingredients = receipt && getIngredients(receipt);
 
-      <Box display="flex" mb="10px" alignItems="center">
-        <Box display="flex" alignItems="center" mr="20px">
-          <BottomIcon>
-            <Clock/>
-          </BottomIcon>
-          <BottomText>{receipt.PreparationTime.Description}</BottomText>
-        </Box>
+  return receipt ? <Box cursor="pointer" onClick={() => onSelect(receipt)} mb="35px">
+    <ImageWrapper mb="10px">
+      <ImageStubWrapper>
+        <NoImage/>
+      </ImageStubWrapper>
+      {image && <Image src={image}/>}
+    </ImageWrapper>
 
-        <Box display="flex" mr="20px" alignItems="center">
-          {receipt.EnergyAmounts.KcalPerPortion && <BottomIcon>
-            <Rating/>
-          </BottomIcon>
-          && (
-            <BottomText>{receipt.EnergyAmounts.KcalPerPortion} cals</BottomText>
-          )}
-        </Box>
+    <Box display="flex" mb="10px" alignItems="center">
+      <Box display="flex" alignItems="center" mr="20px">
+        <BottomIcon>
+          <Clock/>
+        </BottomIcon>
+        <BottomText>{receipt.PreparationTime.Description}</BottomText>
       </Box>
-      <Title>{receipt.Name}</Title>
+
+      <Box display="flex" mr="20px" alignItems="center">
+        {receipt.EnergyAmounts.KcalPerPortion && (
+          <React.Fragment>
+            <BottomIcon>
+              <Rating/>
+            </BottomIcon>
+            <BottomText>
+              {receipt.EnergyAmounts.KcalPerPortion} cals
+            </BottomText>
+          </React.Fragment>
+        )}
+      </Box>
     </Box>
-  );
+    <Title>{receipt.Name}</Title>
+    <Box>{receipt.Description}</Box>
+    <Box>
+            {ingredients.map(ingredient => <Box>{ingredient.Name} {ingredient.Amount}</Box>)}
+    </Box>
+  </Box> : null
 };

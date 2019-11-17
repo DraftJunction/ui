@@ -11,6 +11,17 @@ export const fetchReceipts = request => {
       throw e;
     });
 };
+export const fetchReceipt = id => {
+  return axios
+    .get(`https://hackdraft.online/api/recipe/${id}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(e => {
+      console.log(e);
+      throw e;
+    });
+};
 
 export const makeReceiptsRequest = file => {
   const data = new FormData();

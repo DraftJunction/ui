@@ -4,6 +4,8 @@ import CameraPanel from "./CameraPanel";
 import { connect } from "react-redux";
 import { loadReceipts } from "../../store/receipts";
 import { makeReceiptsRequest } from "../../services/receipts";
+import { getConstraints } from "../../services/media";
+import Box from "../Box";
 
 const CameraWrapperStyled = styled("div")`
   height: 100%;
@@ -15,11 +17,20 @@ const CanvasStyled = styled("canvas")`
   width: 100%;
   height: 100%;
 `;
+
+const StyledVideo = styled("video")`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+`;
 const Camera = ({ loadReceipts, loading }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const blobRef = useRef(null);
-
+  const [camerasStr, setCamerasStr] = useState("");
   const videoCaptureRef = useRef(null);
   const [captured, setCaptured] = useState(false);
   const onAcceptCallback = useCallback(() => {
@@ -29,6 +40,7 @@ const Camera = ({ loadReceipts, loading }) => {
     setCaptured(false);
     proccessCapturing();
   }, []);
+
   const onCaptureCallback = useCallback(() => {
     setCaptured(true);
     videoCaptureRef.current
@@ -44,19 +56,23 @@ const Camera = ({ loadReceipts, loading }) => {
         //todo: log smth
       });
   }, [setCaptured, videoCaptureRef]);
-  const proccessCapturing = useCallback(() => {
+  // useEffect(async () => {
+  //   const cameras = await getCameras();
+  //   setCamerasStr(JSON.stringify(cameras)
+  //   )
+  // }, [])
+  const proccessCapturing = useCallback(async () => {
+    const constraints = await getConstraints();
     navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: { exact: 'environment' } } })
+      .getUserMedia(constraints)
       .then(mediaStream => {
         videoRef.current.srcObject = mediaStream;
         const track = mediaStream.getVideoTracks()[0];
-        console.log(videoCaptureRef.current, "videoCaptureRef.current");
         try {
           videoCaptureRef.current = new ImageCapture(track);
         } catch (e) {
           console.log(e);
         }
-        console.log(videoCaptureRef.current, "videoCaptureRef.current");
       })
       .catch(error => {
         //todo log smth
@@ -92,18 +108,17 @@ const Camera = ({ loadReceipts, loading }) => {
 
   return (
     <CameraWrapperStyled>
-      {!captured && (
-        <video
-          loop
-          muted
-          playsInline={true}
-          width="100%"
-          height="100%"
-          autoPlay
-          ref={videoRef}
-        />
-      )}
-      {captured && <CanvasStyled ref={canvasRef}/>}
+      {/*<Box position="absolute"*/}
+      {/*     bg="white"*/}
+      {/*     width="100%"*/}
+      {/*     zIndex="1"*/}
+      {/*>{camerasStr}</Box>*/}
+      <Box flexBasis="100%" position="relative">
+        {!captured && (
+          <StyledVideo loop muted playsInline={true} autoPlay ref={videoRef} />
+        )}
+        {captured && <CanvasStyled ref={canvasRef} />}
+      </Box>
       <CameraPanel
         disabled={loading}
         captured={captured}
